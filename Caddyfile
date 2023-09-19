@@ -1,5 +1,10 @@
 :{$PORT} {
-	reverse_proxy * {$UPSTREAM:"https://www.google.com"} {
+	@old expression `{shop} == "myshop.com"`
+	@new expression `{shop} != "myshop.com"`
+	reverse_proxy @old {$UPSTREAM:"https://www.google.com"} {
+		header_up Host {upstream_hostport}
+	}
+	reverse_proxy @new {$UPSTREAM:"https://pon-app-new-7mnim.ondigitalocean.app"} {
 		header_up Host {upstream_hostport}
 	}
 }
