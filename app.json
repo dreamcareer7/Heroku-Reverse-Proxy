@@ -8,7 +8,7 @@
 	"env": {
 		"UPSTREAM": {
 			"description": "Upstream URL with http/s & without slash (/) in the end of URL",
-			"value": "https://www.google.com"
+			"value": "https://pon-app-new-7mnim.ondigitalocean.app"
 		}
 	}
 }
