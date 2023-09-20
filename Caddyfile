@@ -1,6 +1,6 @@
 :{$PORT} {
-	@old expression `{shop} == "myshop.com"`
-	@new expression `{shop} != "myshop.com"`
+	@old query shop=myshop.com
+	@new not @old
 	reverse_proxy @new {$UPSTREAM:"https://google.com"} {
 		header_up Host {upstream_hostport}
 	}
